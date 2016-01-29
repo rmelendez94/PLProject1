@@ -1,6 +1,6 @@
-package cannata;
+package melendez.customer;
 
-public class HelloWorld {
+public class Customer {
 
     public static void main(String[] args) {
         // Prints "Hello, World" to the terminal window.
