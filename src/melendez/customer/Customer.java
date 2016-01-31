@@ -9,15 +9,23 @@ public class Customer {
     private String state;
     private String postalCode;
 
-    //This is the Constructor
+    //This is the Default Constructor
     public Customer() {
-
         name = "";
         address = "";
         city = "";
         state = "";
         postalCode = "";
+    }
 
+    //This is the Contructor with parameters
+    public Customer(String n, String a,
+                    String c, String s, String p){
+        name = n;
+        address = a;
+        city = c;
+        state = s;
+        postalCode = p;
     }
 
     //Set and get methods for name
@@ -67,7 +75,7 @@ public class Customer {
                 getAddress() + "\n" + getCity() + ", " +
                 getState() + " " + getPostalCode();
 
-        return null;
+        return nameAndAddressFormatted;
     }
 
 }
