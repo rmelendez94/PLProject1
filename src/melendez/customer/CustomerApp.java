@@ -7,6 +7,8 @@ public class CustomerApp {
     public static void main(String[] args) {
         //Construct a new scanner for user input
         Scanner s = new Scanner(System.in);
+        //Creates base DB
+        new CustomerDB();
         //Calls the method that runs the loop for Customer Viewer
         runProgram(s);
     }
@@ -37,8 +39,8 @@ public class CustomerApp {
             }
             //Ask for retry and change loop control variable accordingly
             System.out.print("Display another customer? (y/n): ");
+            keepGoing = s.next();
             System.out.println();
-            keepGoing = s.nextLine();
 
             //Program ends if user enters anything other than y/Y
         }
