@@ -8,35 +8,24 @@ public class Customer {
     private String city;
     private String state;
     private String postalCode;
-    private int customerNumber;
 
     //This is the Default Constructor
-    public Customer(int customerNum) {
+    public Customer() {
         name = "";
         address = "";
         city = "";
         state = "";
         postalCode = "";
-        customerNumber = customerNum;
     }
 
     //This is the Contructor with parameters
-    public Customer(int cn, String n, String a,
+    public Customer(String n, String a,
                     String c, String s, String p){
         name = n;
         address = a;
         city = c;
         state = s;
         postalCode = p;
-        customerNumber = cn;
-    }
-
-    //Set and get methods for name
-    public void setCustomerNumber(String name){
-        this.customerNumber = customerNumber;
-    }
-    public int getCustomerNumber() {
-        return customerNumber;
     }
 
     //Set and get methods for name

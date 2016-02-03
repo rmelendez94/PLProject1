@@ -1,32 +1,31 @@
 package melendez.customer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CustomerDB {
 
-    private static List<Customer> customerDB = new ArrayList<Customer>();
+    private static Map<Integer, Customer> customerDB = new HashMap<Integer, Customer>();
 
     public CustomerDB(){
-        customerDB.add(new Customer(1001, "Barbara White", "3400 Richmond Parkway #3423",
+        // populate database
+        customerDB.put(1001, new Customer("Barbara White", "3400 Richmond Parkway #3423",
                 "Bristol", "CT", "06010"));
-        customerDB.add(new Customer(1002, "Karl Vang", "327 Franklin Street",
+        customerDB.put(1002, new Customer("Karl Vang", "327 Franklin Street",
                 "Edina", "MN", "55435"));
-        customerDB.add(new Customer(1003, "Ronda Chavan", "518 Commanche Dr.",
+        customerDB.put(1003, new Customer("Ronda Chavan", "518 Commanche Dr.",
                 "Greensboro", "NC", "27410"));
-        customerDB.add(new Customer(1004, "Phillip Cannata", "2317 Speedway",
+        customerDB.put(1004, new Customer("Phillip Cannata", "2317 Speedway",
                 "Austin", "TX", "78712"));
     }
 
     public static Customer  getCustomer(int customerNumber) {
 
-        for(Customer customer : customerDB){
-            if (customer.getCustomerNumber() == customerNumber){
-                return customer;
-            }
+        // check if given customer number is a key in hashmap
+        if (customerDB.containsKey(customerNumber)) {
+            return customerDB.get(customerNumber);
         }
 
-        //if code gets this far
+        // customer number not found in database if code gets this far
         return null;
 
     }
